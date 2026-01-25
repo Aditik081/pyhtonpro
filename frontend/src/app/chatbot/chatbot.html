@@ -1,0 +1,23 @@
+<div class="chat-container">
+  <!-- Home Button -->
+  <div class="home-link">
+    <button (click)="goHome()">Home</button>
+  </div>
+
+  <div class="messages">
+    <div *ngFor="let msg of messages" [ngClass]="msg.sender">
+      <div class="bubble ai-response-box" [innerHTML]="msg.text"></div>
+    </div>
+  </div>
+
+  <div class="input-area">
+    <div class="left-inputs">
+      <input type="file" (change)="onFileSelected($event)" />
+      <input [(ngModel)]="userInput" placeholder="Ask something or upload report..." />
+    </div>
+    <div class="right-buttons">
+      <button (click)="sendMessage()">Send</button>
+      <button (click)="uploadReport()">Upload</button>
+    </div>
+  </div>
+</div>

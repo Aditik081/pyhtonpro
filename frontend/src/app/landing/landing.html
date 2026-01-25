@@ -1,0 +1,83 @@
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">AI Health Analyzer</div>
+  <div class="nav-links">
+    <a href="#about-us">About Us</a>
+    <a href="#about-site">About Site</a>
+       <button (click)="startInterview(); test()">Start Interview</button>
+  </div>
+</div>
+
+<!-- HERO / LANDING -->
+<div class="landing-wrapper">
+  <div class="landing-container">
+    <h1 class="hero-title">AI that understands your medical reports.</h1>
+    <p class="hero-sub">
+      Upload your lab reports and get smart, easy-to-understand health insights powered by AI.
+    </p>
+
+    <div class="typing-line">
+      🤖 <span>{{ typingText }}</span><span class="cursor">|</span>
+    </div>
+
+    <ul class="landing-benefits">
+      <li>✓ Upload your medical reports easily</li>
+      <li>✓ Get AI-powered insights instantly</li>
+      
+      <li>✓ Track your health over time</li>
+    </ul>
+
+        <button (click)="startInterview(); test()">Start Interview</button>
+  </div>
+
+  <!-- IMAGE + CARD -->
+  <div class="image-container">
+    <div class="lab-wrapper">
+
+      <!-- GLOW -->
+      <div class="hero-glow"></div>
+
+      <!-- GIRL IMAGE -->
+      <img src="assets/images/image.png" class="lab-image" alt="Lab Girl">
+
+      <!-- FLOATING CARD -->
+      <div class="lab-card">
+        <div class="lab-header">🩸 Blood Report Analysis</div>
+
+        <div class="lab-item">
+          <span>Hemoglobin</span>
+          <b>9.4 g/dL</b>
+          <span class="low">Low</span>
+        </div>
+
+        <div class="lab-item">
+          <span>Platelet Count</span>
+          <b>65,000 /µL</b>
+          <span class="low">Low</span>
+        </div>
+
+        <div class="lab-item">
+          <span>WBC Count</span>
+          <b>4,200 /µL</b>
+          <span class="ok">Normal</span>
+        </div>
+
+        <div class="ai-box">
+          🤖 AI Detection: Possible Thrombocytopenia
+        </div>
+      </div>
+    </div>
+
+    <!-- STEPS -->
+    <div class="interactive-steps">
+      <h2>How Lab Report Analyzer works</h2>
+
+      
+
+      <div class="step" *ngFor="let step of steps; let i = index">
+        <div class="step-number">{{ i + 1 }}</div>
+        <div class="step-text">{{ step }}</div>
+      </div>
+    </div>
+  </div>
+</div>
