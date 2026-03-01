@@ -14,7 +14,7 @@ import pytesseract
 from google import genai
 import os
 
-client = genai.Client(api_key="AIzaSyAUXt6FtD_ZjVCk3wjIwHh0A2kzM7HApTg")
+client = genai.Client(api_key="")
 
 
 for m in client.models.list():
