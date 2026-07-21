@@ -14,12 +14,9 @@ import pytesseract
 from google import genai
 import os
 
-client = genai.Client(api_key="")
+from google import genai
 
-
-for m in client.models.list():
-    print(m.name)
-
+client = genai.Client(api_key="YOUR_NEW_API_KEY")
 
 
 
@@ -252,16 +249,15 @@ Answer professionally. Give medical advice, precautions, and answer in 2 or 3 li
 
     try:
         response = client.models.generate_content(
-            model="models/gemini-flash-latest",
+            model="gemini-2.5-flash",
             contents=user_prompt
         )
 
         return jsonify({"answer": response.text})
 
     except Exception as e:
-        import traceback
-        traceback.print_exc()
-        return jsonify({"answer": "❌ Unable to generate a response at this time."})
+        print(e)
+        return jsonify({"answer": str(e)})
 
 # =========================
 # RUN
